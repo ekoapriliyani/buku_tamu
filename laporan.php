@@ -35,6 +35,9 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="laporan.php">Laporan</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="logout.php"><b>Logout</b></a>
+                    </li>
                 </ul>
             </div>
         </div>

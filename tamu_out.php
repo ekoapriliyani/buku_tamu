@@ -57,18 +57,16 @@ if (isset($_POST['export_excel'])) {
                     <li class="nav-item">
                         <a class="nav-link" href="laporan.php">Laporan</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="logout.php"><b>Logout</b></a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <h4 class="text-center">Tamu Sudah Check Out</h4>
-    <!-- Tombol Export ke Excel -->
-    <!-- <div class="container text-end mb-3">
-        <form method="post">
-            <button type="submit" name="export_excel" class="btn btn-success">Export ke Excel</button>
-        </form>
-    </div> -->
+
 
     <table class="table table-striped" id="example">
         <thead>
