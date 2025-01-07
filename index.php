@@ -29,6 +29,27 @@ if (!isset($_SESSION['username']) && basename($_SERVER['PHP_SELF']) != 'login.ph
     <!-- font awesome icon -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <title>Buku Tamu Bevananda</title>
+
+    <style>
+        .fa-2x:hover {
+            transform: scale(1.2);
+        }
+
+        .text-info:hover i {
+            color: #017c89;
+            /* Warna biru muda untuk info */
+        }
+
+        .text-danger:hover i {
+            color: #e04f5f;
+            /* Warna merah cerah untuk hapus */
+        }
+
+        .text-success:hover i {
+            color: #006400;
+            /* Warna hijau gelap untuk print */
+        }
+    </style>
 </head>
 
 <body>
@@ -112,9 +133,15 @@ if (!isset($_SESSION['username']) && basename($_SERVER['PHP_SELF']) != 'login.ph
                     <td><?= $row["tgl"]; ?></td>
                     <td><img src="img/<?= $row["kode_booking"] . ".png"; ?>" width=""></td>
                     <td>
-                        <a href="detail.php?id=<?= $row["id"]; ?>" class=""><i class="fa-solid fa-circle-info fa-2x"></i></a>
-                        <a href="hapustamu.php?id=<?= $row["id"]; ?>" class="" onclick="return confirm('yakin batalkan tamu?');"><i class="fa fa-trash fa-2x" style="color:red"></i></a>
-                        <a href="cetak_pdf.php?id=<?= $row["id"]; ?>" class=""><i class="fa fa-print fa-2x" style="color:green"></i></a>
+                        <a href="detail.php?id=<?= $row["id"]; ?>" class="text-info me-3" title="Detail">
+                            <i class="fa-solid fa-circle-info fa-2x" style="transition: transform 0.3s ease;"></i>
+                        </a>
+                        <a href="hapustamu.php?id=<?= $row["id"]; ?>" class="text-danger me-3" title="Hapus Tamu" onclick="return confirm('Yakin batalkan tamu?');">
+                            <i class="fa fa-trash fa-2x" style="transition: transform 0.3s ease; color:red;"></i>
+                        </a>
+                        <a href="cetak_pdf.php?id=<?= $row["id"]; ?>" class="text-success" title="Cetak PDF">
+                            <i class="fa fa-print fa-2x" style="transition: transform 0.3s ease; color:green;"></i>
+                        </a>
                     </td>
                 </tr>
                 <?php $no++; ?>

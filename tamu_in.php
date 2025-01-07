@@ -16,6 +16,9 @@ $tamu = query("SELECT * FROM tbl_tamu_in");
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css">
 
+    <!-- font awesome icon -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
     <title>Buku Tamu Bevananda</title>
 </head>
 
@@ -79,7 +82,7 @@ $tamu = query("SELECT * FROM tbl_tamu_in");
                     <td><?= $row["check_in"]; ?></td>
                     <td hidden><?= $row["check_out"]; ?></td>
                     <td>
-                        <a href="detail2.php?id=<?= $row["id"]; ?>" class="btn btn-info">Detail</a>
+                        <a href="detail2.php?id=<?= $row["id"]; ?>" class=""><i class="fa-solid fa-circle-info fa-2x"></i></a>
                     </td>
                 </tr>
                 <?php $no++; ?>

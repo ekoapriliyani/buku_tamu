@@ -59,7 +59,7 @@
                 <div class="col-md-4 text-center">
                     <label class="form-label d-block">&nbsp;</label>
                     <button class="btn btn-success btn-block" type="submit" name="export">
-                        <i class="fas fa-file-export"></i> Export
+                        <i class="fas fa-file-export"></i> Expor to Excel
                     </button>
                     <button class="btn btn-danger btn-block" type="submit" name="export_pdf">
                         <i class="fas fa-file-pdf"></i> Export to PDF

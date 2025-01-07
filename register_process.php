@@ -18,7 +18,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $result = $conn->query($checkQuery);
 
     if ($result->num_rows > 0) {
-        echo "Username atau email sudah terdaftar!";
+        echo "<script>
+                alert('Username atau email sudah terdaftar');
+                document.location.href='register.php';
+            </script>";
     } else {
         // Insert ke database
         $insertQuery = "INSERT INTO users (username, email, password, role) VALUES ('$username', '$email', '$password', '$role')";
