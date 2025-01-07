@@ -316,3 +316,12 @@ function exportToExcel($data)
     $writer->save('php://output');
     exit;
 }
+
+// fungsi hapus
+function hapus($id)
+{
+    global $conn;
+
+    mysqli_query($conn, "DELETE FROM tbl_tamu WHERE id = $id");
+    return mysqli_affected_rows($conn);
+}

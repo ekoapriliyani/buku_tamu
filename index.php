@@ -97,7 +97,7 @@ $tamu = query("SELECT * FROM tbl_tamu");
                     <td><img src="img/<?= $row["kode_booking"] . ".png"; ?>" width=""></td>
                     <td>
                         <a href="detail.php?id=<?= $row["id"]; ?>" class="btn btn-warning">Validasi</a>
-                        <a href="" class="btn btn-danger">Batal</a>
+                        <a href="hapustamu.php?id=<?= $row["id"]; ?>" class="btn btn-danger" onclick="return confirm('yakin batalkan tamu?');">Batal</a>
                         <a href="cetak_pdf.php?id=<?= $row["id"]; ?>" class="btn btn-success">Cetak PDF</a>
                     </td>
                 </tr>
