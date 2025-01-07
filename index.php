@@ -1,7 +1,17 @@
 <?php
+
+// Mulai sesi
+session_start();
+
 require 'functions.php';
 
 $tamu = query("SELECT * FROM tbl_tamu");
+
+// Memaksa pengguna login jika belum ada sesi
+if (!isset($_SESSION['username']) && basename($_SERVER['PHP_SELF']) != 'login.php') {
+    header("Location: login.php");
+    exit;
+}
 
 ?>
 
@@ -15,6 +25,9 @@ $tamu = query("SELECT * FROM tbl_tamu");
     <!-- datatable -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css">
+
+    <!-- font awesome icon -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <title>Buku Tamu Bevananda</title>
 </head>
 
@@ -39,6 +52,9 @@ $tamu = query("SELECT * FROM tbl_tamu");
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="laporan.php">Laporan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="logout.php"><b>Logout</b></a>
                     </li>
                 </ul>
             </div>
@@ -96,9 +112,9 @@ $tamu = query("SELECT * FROM tbl_tamu");
                     <td><?= $row["tgl"]; ?></td>
                     <td><img src="img/<?= $row["kode_booking"] . ".png"; ?>" width=""></td>
                     <td>
-                        <a href="detail.php?id=<?= $row["id"]; ?>" class="btn btn-warning">Validasi</a>
-                        <a href="hapustamu.php?id=<?= $row["id"]; ?>" class="btn btn-danger" onclick="return confirm('yakin batalkan tamu?');">Batal</a>
-                        <a href="cetak_pdf.php?id=<?= $row["id"]; ?>" class="btn btn-success">Cetak PDF</a>
+                        <a href="detail.php?id=<?= $row["id"]; ?>" class=""><i class="fa-solid fa-circle-info fa-2x"></i></a>
+                        <a href="hapustamu.php?id=<?= $row["id"]; ?>" class="" onclick="return confirm('yakin batalkan tamu?');"><i class="fa fa-trash fa-2x" style="color:red"></i></a>
+                        <a href="cetak_pdf.php?id=<?= $row["id"]; ?>" class=""><i class="fa fa-print fa-2x" style="color:green"></i></a>
                     </td>
                 </tr>
                 <?php $no++; ?>

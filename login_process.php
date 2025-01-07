@@ -1,4 +1,5 @@
 <?php
+
 include 'functions.php';
 
 // Periksa koneksi
@@ -28,9 +29,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 header('location: satpam/index.php');
             }
         } else {
-            echo "Password salah!";
+            echo "<script>
+                alert('Password salah!');
+                document.location.href='index.php';
+            </script>";
         }
     } else {
-        echo "Username tidak ditemukan!";
+        echo "<script>
+            alert('Username tidak ditemukan!');
+            document.location.href='index.php';
+        </script>";
     }
 }

@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="https://fontawesome.com/icons">
     <style>
         body {
-            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            background: url('img/BV-Gabion-Banner-Page-02.jpg') no-repeat center center fixed;
+            background-size: cover;
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -17,7 +19,7 @@
         }
 
         .login-card {
-            background: #fff;
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 15px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             color: #333;
@@ -27,19 +29,29 @@
             text-align: center;
             font-size: 1.5rem;
             font-weight: bold;
-            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            background: #940707;
             color: #fff;
             border-top-left-radius: 15px;
             border-top-right-radius: 15px;
         }
 
         .login-card .btn-primary {
-            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            background: #940707;
             border: none;
         }
 
         .login-card .btn-primary:hover {
-            background: linear-gradient(135deg, #5d7be3, #946dd2);
+            background: #800000;
+        }
+
+        .login-card .card-footer a {
+            color: #940707;
+            text-decoration: none;
+        }
+
+        .login-card .card-footer a:hover {
+            color: #800000;
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -56,7 +68,7 @@
                         <form action="login_process.php" method="POST">
                             <div class="mb-3">
                                 <label for="username" class="form-label">Username</label>
-                                <input type="text" class="form-control" id="username" name="username" required>
+                                <input type="text" class="form-control" id="username" name="username" required autofocus>
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
