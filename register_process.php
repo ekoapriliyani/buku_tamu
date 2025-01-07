@@ -23,7 +23,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Insert ke database
         $insertQuery = "INSERT INTO users (username, email, password, role) VALUES ('$username', '$email', '$password', '$role')";
         if ($conn->query($insertQuery)) {
-            echo "Registrasi berhasil! <a href='login.php'>Login di sini</a>";
+            echo "<script>
+                alert('Selamat anda berhasil registrasi');
+                document.location.href='login.php';
+            </script>";
         } else {
             echo "Gagal registrasi: " . $conn->error;
         }
