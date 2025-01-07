@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 07, 2025 at 04:23 AM
+-- Generation Time: Jan 07, 2025 at 02:48 PM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- PHP Version: 8.3.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,17 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `buku_tamu`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_kategori`
---
-
-CREATE TABLE `tbl_kategori` (
-  `id_kategori` int(11) NOT NULL,
-  `nama_kategori` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -60,8 +49,7 @@ CREATE TABLE `tbl_tamu` (
 --
 
 INSERT INTO `tbl_tamu` (`id`, `kode_booking`, `kategori`, `nama`, `asal`, `hp`, `email`, `alamat`, `pic`, `lokasi`, `keperluan`, `tgl`, `check_in`, `check_out`) VALUES
-(85, '4E6CA5E0D3', 'REGULER', 'MAREKO', 'PT ABC', '085648973921', 'ekoapriliyani@gmail.com', 'Taman Kertamukti Residence Blok C30/02', 'FARID', 'PABRIK CIKARANG', 'MEETING', '2025-01-04', '', ''),
-(86, 'A0D4BBE14D', 'REGULER', 'EKO APRILIYANI', 'PT ABC', '085648973921', 'ekoapriliyani@gmail.com', 'Taman Kertamukti Residence Blok C30/02', 'FARID', 'PABRIK CIKARANG', 'MEETING', '2025-01-06', '', '');
+(80, 'E7933F8F14', 'REGULER', 'HORAS SIHITE', 'PT BAC', '085179975120', 'alfazzatech22@gmail.com', 'MALAYSIA', 'FARID', 'PABRIK CIKARANG', 'AUDIT SNI', '2024-11-20', '', '');
 
 -- --------------------------------------------------------
 
@@ -91,7 +79,8 @@ CREATE TABLE `tbl_tamu_in` (
 --
 
 INSERT INTO `tbl_tamu_in` (`id`, `kode_booking`, `kategori`, `nama`, `asal`, `hp`, `email`, `alamat`, `pic`, `lokasi`, `keperluan`, `tgl`, `check_in`, `check_out`) VALUES
-(64, '5176DCC710', 'REGULER', 'ZULFIANDI', 'PT ABC', '085648973921', 'alfazzatech22@gmail.com', 'CIKARANG', 'MR CHANO', 'PABRIK CIKARANG', 'MEETING', '2024-11-22', '14:46:08', '');
+(55, '5BFC363EFA', 'REGULER', 'MAREKO EKO', 'PT BMS', '085179975120', 'ekoapriliyani@gmail.com', 'Cibitung', 'Ibu Wenda', 'PABRIK CIKARANG', 'presentasi', '2024-11-08', '13:50:40', ''),
+(58, '07207D4FE1', 'REGULER', 'DJONI BUDIMAN', 'PT BCD', '085648973921', 'ekoapriliyani@gmail.com', 'Taman Kertamukti Residence Blok C30/02', 'FARID', 'PABRIK CIKARANG', 'AUDIT SNI', '2024-11-21', '09:16:27', '');
 
 -- --------------------------------------------------------
 
@@ -151,37 +140,32 @@ INSERT INTO `tbl_tamu_out` (`id`, `kode_booking`, `kategori`, `nama`, `asal`, `h
 (29, '4343D1A3E2', 'REGULER', 'Sabik, Robert, Dhani', 'Sejahtera Bersama', '085717984074', 'sabik@bevananda.com', 'Bekasi Utara', 'Eko - IT', 'PABRIK CIKARANG', 'Penawaran test hardware', '2024-11-11', '15:33:32', '15:33:52'),
 (31, '1784064510', 'REGULER', 'Robert, Cano, Zul', 'Bevananda', '081788888899', 'rdanarto@yahoo.com', 'Griya Inti', 'Sabik', 'PABRIK CIKARANG', 'Koordinasi Project', '2024-11-11', '15:11:06', '08:53:50'),
 (32, '4D51AB839F', 'VVIP', 'hari aja', 'tamu', '081295407301', 'it.erp@bevananda.com', 'cikarang', 'eko', 'PABRIK CIKARANG', 'janjian', '2024-11-15', '13:20:05', '13:20:29'),
-(33, '4B23E3B09A', 'VIP', 'HASANAH KARIMAH', 'PT BERCA ABC', '087812435836', 'widi@bevananda.com', 'Jakarta Center', 'MR SABIK', 'PABRIK CIKARANG', 'CEK BAHAN BAKU', '2024-11-21', '14:10:31', '14:10:58'),
-(34, '5BFC363EFA', 'REGULER', 'MAREKO EKO', 'PT BMS', '085179975120', 'ekoapriliyani@gmail.com', 'Cibitung', 'Ibu Wenda', 'PABRIK CIKARANG', 'presentasi', '2024-11-08', '13:50:40', '10:34:20'),
-(35, '1A418DFB2F', 'VVIP', 'Alexander Agung', 'XYZ Company', '081119961428', 'rizki@bevananda.com', 'sunter', 'Doni', 'PABRIK CIKARANG', 'Ngobrol', '2024-11-21', '14:49:09', '14:49:34'),
-(36, 'F07AAD77AF', 'REGULER', 'cek', 'cek', '212121', 'cek@gmail', 'cek', 'cek', 'PABRIK CIKARANG', 'cek', '2024-11-21', '10:34:26', '10:19:57'),
-(37, 'CA67DB7AD9', 'REGULER', 'asas', 'asas', '132', 'asas@gada', 'asas', 'asas', 'PABRIK CIKARANG', 'asasa', '2024-11-14', '10:34:33', '10:20:02'),
-(38, '07207D4FE1', 'REGULER', 'DJONI BUDIMAN', 'PT BCD', '085648973921', 'ekoapriliyani@gmail.com', 'Taman Kertamukti Residence Blok C30/02', 'FARID', 'PABRIK CIKARANG', 'AUDIT SNI', '2024-11-21', '09:16:27', '10:20:06'),
-(39, '6EF85BC0AA', 'VVIP', 'LEYANDRA KUSUMA', 'DINAS PUPR', '085648973921', 'alfazzatech22@gmail.com', 'JAKARTA', 'IBU VANIA', 'PABRIK CIKARANG', 'CEK BARANG', '2024-11-22', '10:27:15', '10:27:49');
+(33, '4B23E3B09A', 'VIP', 'HASANAH KARIMAH', 'PT BERCA ABC', '087812435836', 'widi@bevananda.com', 'Jakarta Center', 'MR SABIK', 'PABRIK CIKARANG', 'CEK BAHAN BAKU', '2024-11-21', '14:10:31', '14:10:58');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_user`
+-- Table structure for table `users`
 --
 
-CREATE TABLE `tbl_user` (
+CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
-  `nama_lengkap` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `level` enum('Administrator','Satpam','','') NOT NULL
+  `role` enum('administrator','satpam','','') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `role`) VALUES
+(1, 'eko', 'eko@gmail.com', '$2y$10$LSnqfRCSU1B0zVO/2shUYu7H1mWF1P.VrcLVuzHFdY5sU/pTubhEm', 'administrator');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `tbl_kategori`
---
-ALTER TABLE `tbl_kategori`
-  ADD PRIMARY KEY (`id_kategori`);
 
 --
 -- Indexes for table `tbl_tamu`
@@ -202,32 +186,38 @@ ALTER TABLE `tbl_tamu_out`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Indexes for table `users`
 --
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for table `tbl_kategori`
+-- AUTO_INCREMENT for dumped tables
 --
-ALTER TABLE `tbl_kategori`
-  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_tamu`
 --
 ALTER TABLE `tbl_tamu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- AUTO_INCREMENT for table `tbl_tamu_in`
 --
 ALTER TABLE `tbl_tamu_in`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT for table `tbl_tamu_out`
 --
 ALTER TABLE `tbl_tamu_out`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
