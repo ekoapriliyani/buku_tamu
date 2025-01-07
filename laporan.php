@@ -1,29 +1,3 @@
-<?php
-require 'functions.php';
-
-
-$tamu = query("SELECT * FROM tbl_tamu_out ORDER BY id DESC");
-
-
-if (isset($_POST['export'])) {
-    $tgl_awal = $_POST['tgl_awal'];
-    $tgl_akhir = $_POST['tgl_akhir'];
-
-    // Validasi input tanggal
-    if (!empty($tgl_awal) && !empty($tgl_akhir)) {
-        $query = "SELECT * FROM tbl_tamu_out WHERE tgl BETWEEN '$tgl_awal' AND '$tgl_akhir' ORDER BY id DESC";
-        $tamu = query($query);
-        exportToExcel($tamu);
-    } else {
-        echo "<script>alert('Harap pilih tanggal awal dan akhir.');</script>";
-    }
-} else {
-    $tamu = query("SELECT * FROM tbl_tamu_out ORDER BY id DESC");
-}
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,24 +41,30 @@ if (isset($_POST['export'])) {
     </nav>
     <br>
 
-    <h4 class="text-center">Laporan</h4>
-    <form action="" method="post">
-        <div class="row mr-2">
-            <div class="col-2">
-                <input class="form-control" type="date" name="tgl_awal" id="tgl_awal">
-            </div>
-            <div class="col-2">
-                <p>sampai dengan :</p>
-            </div>
+    <div class="container mt-5">
+        <h4 class="text-center mb-4">Laporan</h4>
+        <form action="export.php" method="post" class="shadow p-4 rounded bg-light">
+            <div class="row align-items-center mb-3">
+                <div class="col-md-4">
+                    <label for="tgl_awal" class="form-label">Tanggal Awal:</label>
+                    <input class="form-control" type="date" name="tgl_awal" id="tgl_awal">
+                </div>
+                <div class="col-md-4">
+                    <label for="tgl_akhir" class="form-label">Tanggal Akhir:</label>
+                    <input class="form-control" type="date" name="tgl_akhir" id="tgl_akhir">
+                </div>
+                <div class="col-md-4 text-center">
+                    <label class="form-label d-block">&nbsp;</label>
+                    <button class="btn btn-success btn-block" type="submit" name="export">
+                        <i class="fas fa-file-export"></i> Export
+                    </button>
+                    <button class="btn btn-danger btn-block" type="submit" name="export_pdf">
+                        <i class="fas fa-file-pdf"></i> Export to PDF
+                    </button>
+                </div>
+        </form>
+    </div>
 
-            <div class="col-2">
-                <input class="form-control" type="date" name="tgl_akhir" id="tgl_akhir">
-            </div>
-            <div class="col-2">
-                <button class="btn btn-success" type="submit" name="export">Export</button>
-            </div>
-        </div>
-    </form>
 
 
 
