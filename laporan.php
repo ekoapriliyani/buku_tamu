@@ -1,3 +1,15 @@
+<?php
+
+// memualai session
+session_start();
+
+// Memaksa pengguna login jika belum ada sesi
+if (!isset($_SESSION['username']) && basename($_SERVER['PHP_SELF']) != 'login.php') {
+    header("Location: login.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

@@ -1,7 +1,17 @@
 <?php
+
+// Mulai sesi
+session_start();
+
 require 'functions.php';
 
 $tamu = query("SELECT * FROM tbl_tamu_out ORDER BY id DESC");
+
+// Memaksa pengguna login jika belum ada sesi
+if (!isset($_SESSION['username']) && basename($_SERVER['PHP_SELF']) != 'login.php') {
+    header("Location: login.php");
+    exit;
+}
 
 // Export ke Excel
 if (isset($_POST['export_excel'])) {

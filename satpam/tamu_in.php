@@ -1,7 +1,15 @@
 <?php
+
+session_start();
 require '../functions.php';
 
 $tamu = query("SELECT * FROM tbl_tamu_in");
+
+// Memaksa pengguna login jika belum ada sesi
+if (!isset($_SESSION['username']) && basename($_SERVER['PHP_SELF']) != 'login.php') {
+    header("Location: login.php");
+    exit;
+}
 
 ?>
 
