@@ -8,7 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background: linear-gradient(135deg, #f093fb, #f5576c);
+            background: url('img/BV-Banner-Page-03.jpg') no-repeat center center fixed;
+            background-size: cover;
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -17,7 +18,7 @@
         }
 
         .register-card {
-            background: #fff;
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 15px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             color: #333;
@@ -27,19 +28,29 @@
             text-align: center;
             font-size: 1.5rem;
             font-weight: bold;
-            background: linear-gradient(135deg, #f093fb, #f5576c);
+            background: #940707;
             color: #fff;
             border-top-left-radius: 15px;
             border-top-right-radius: 15px;
         }
 
         .register-card .btn-primary {
-            background: linear-gradient(135deg, #f093fb, #f5576c);
+            background: #940707;
             border: none;
         }
 
-        .register-card .btn-primary:hover {
-            background: linear-gradient(135deg, #e07ae0, #e34d56);
+        .login-card .btn-primary:hover {
+            background: #800000;
+        }
+
+        .login-card .card-footer a {
+            color: #940707;
+            text-decoration: none;
+        }
+
+        .login-card .card-footer a:hover {
+            color: #800000;
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -56,7 +67,7 @@
                         <form action="register_process.php" method="POST">
                             <div class="mb-3">
                                 <label for="username" class="form-label">Username</label>
-                                <input type="text" class="form-control" id="username" name="username" required>
+                                <input type="text" class="form-control" id="username" name="username" required autofocus>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
