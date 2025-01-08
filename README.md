@@ -38,4 +38,8 @@ https://github.com/ekoapriliyani/buku_tamu.git
 ```
 2. Konfigurasi Database: Impor file ```buku_tamu.sql```  pada phpmyadmin
 
-3. Akses aplikasi melalui browser di ```localhost/buku-tamu```
+3. Akses aplikasi melalui browser di ```localhost/buku_tamu```
+
+## Kontribusi
+Lihat [CONTRIBUTING.md](CONTRIBUTING.md) untuk panduan berkontribusi pada proyek ini.
+
