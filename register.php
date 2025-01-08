@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- font awesome icon -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <style>
         body {
             background: url('img/BV-Banner-Page-03.jpg') no-repeat center center fixed;
@@ -85,7 +87,7 @@
                                     <option value="satpam">Satpam</option>
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-primary w-100">Register</button>
+                            <button type="submit" class="btn btn-primary w-100"><i class="fa-solid fa-address-card"></i> Register</button>
                         </form>
                     </div>
                     <div class="card-footer text-center">
